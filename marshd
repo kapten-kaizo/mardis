@@ -1,0 +1,103 @@
+# Gak di compile kok bro >_<
+# whatsapp me : +6281210160358
+import sys
+import os
+OUTPUT = '._______________.'
+lol = ('''
+created by @KangEhem
+                                __        __
+     ____ ___  ____ ___________/ /_  ____/ /
+    / __ `__ \/ __ `/ ___/ ___/ __ \/ __  / 
+   / / / / / / /_/ / /  (__  ) / / / /_/ /  
+  /_/ /_/ /_/\__,_/_/  /____/_/ /_/\__,_/   
+                     marshal decompiling
+''')
+magic = "\n# Jangan Lupa Subrek Yt gw ya Bre:)\ntry:\n    __import__('uncompyle6').main.decompile(2.7, _____, __import__('sys').stdout)\nexcept (AssertionError):\n    print(_____)\nexcept (NameError, KeyError, IndexError, ValueError):\n    print('# Decompiling failed!')\n# Ciya Recode doang lu Bisanya njir >_<\n"
+pd = 100-100
+st = OUTPUT
+data = sys.argv
+isf = os.path.isfile
+f = data[0]
+os.system('clear') ; print(lol)
+try:
+    import uncompyle6
+except (ImportError):
+    os.system('pip2 install uncompyle6 ; python2 %s'%(f))
+try:
+    fn = data[1]
+except (IndexError):
+    exit('Usage: %s [ filename ] [ output ]\n'%(f))
+if len(data) == 3:
+    fl = data[2]
+else:
+    fl = 'decompiled-27.py'
+try:
+    op = open(fn).read()
+except (IOError):
+    exit("# can't open file %s\n"%(fn))
+def std(i):
+    sys.stdout.write(i) ; sys.stdout.flush()
+def result(pid=False):
+    if pid is True:
+        std('\r# succes to decompiling file %s object %s\n'%(fn, str(pd)))
+        print('# output file just saved to %s\n'%(fl))
+    if pid is False:
+        print('# Syntax eror, not found exec\n')
+while True:
+    if 'Decompiling failed!' in op:
+        try:
+            q = open(st).read()
+        except (IOError):
+            result(False)
+            break
+        with open(fl, mode='w') as load:
+            load.write(q)
+        std('\r# failed to decompiling file %s object %s\n'%(fn, str(pd)))
+        print('# file %s object %s saved to %s\n'%(fn, str(pd-1), fl))
+        break
+    else:
+        repl = None
+        plas = None
+        tls = False
+    if 'exec' in op:
+        for i in open(fn).readlines():
+            if i[:4] == 'exec':
+                if i[4] == ' ':
+                    repl = 'exec '
+                    plas = '_____='
+                    tls = True
+                    break
+                if i[4] == '(':
+                    repl = 'exec('
+                    plas = '_____=('
+                    tls = True
+                    break
+        if tls == True:
+            std('\r# decompiling file %s object %s '%(fn, str(pd)))
+            new = op.replace(repl, plas)
+            load = open(st, mode='w')
+            load.write(new)
+            load.write(magic)
+            load.close()
+            os.system('python2 %s >%s'%(st, fl))
+            pd += 1
+            op = open(fl)
+            op = op.read()
+        if tls == False:
+            if isf(st):
+                result(True)
+                break
+            else:
+                result(False)
+                break
+    else:
+        if isf(st):
+            result(True)
+            break
+        else:
+            result(False)
+            break
+try:
+    exit(os.unlink(st))
+except:pass
+# Nyari apa sih bro:)

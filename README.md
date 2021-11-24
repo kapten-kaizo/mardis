@@ -13,4 +13,4 @@ $ python2 setup.py install
 ````bash
 $ mardis (filename).py
 ````
-~ Jangan Lupa Follow Github Gw ya Cok! ~
+Jangan Lupa Follow Github Gw ya Cok!

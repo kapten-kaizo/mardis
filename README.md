@@ -1,16 +1,14 @@
 #### mardis
 Marshal decompiler++ python2.7
-#### Requirements
+#### Cara menggunakan!
+ketikan command berikut di apk termux
 ````bash
-~ Termux
-~ python 2.7
-````
-#### Cara Menginstall
-````bash
+$ pkg install python2 git
+$ git clone https://github.com/kapten-kaizo/mardis
+$ cd mardis
+$ unzip mardis.zip
 $ python2 setup.py install
 ````
-#### Cara Menggunakan
-````bash
-$ mardis (filename).py
-````
-Jangan Lupa Follow Github Gw ya Cok!
+password : [klik disini](https://cararegistrasi.com/nASHCfGnkZ)
+
+

@@ -4,5 +4,6 @@ Marshal decompiler++ python2.7
 $ pkg install python2 git
 $ git clone https://github.com/kapten-kaizo/mardis
 $ cd mardis
+$ python2 -m pip install xdis==5.0.11 uncompyle6==3.7.4
 $ python2 run.py
 ````

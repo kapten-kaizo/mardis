@@ -1,1 +1,2 @@
-import mardis
+from mardis import main
+main()

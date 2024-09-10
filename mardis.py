@@ -3,7 +3,7 @@
 # Update at: 22 Jun 2024 18.42
 
 import sys, re
-from StringIO import StringIO
+from IO import StringIO
 from uncompyle6.main import decompile
 
 script_name = 'mardis'

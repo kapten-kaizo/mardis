@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 # Repo: https://github.com/kapten-kaizo/mardis
 # Author: @Kang_Ehem
 # Update at: 22 Jun 2024 18.42

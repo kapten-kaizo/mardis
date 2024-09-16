@@ -6,8 +6,9 @@
 import sys, re
 from StringIO import StringIO
 from uncompyle6.main import decompile
+import marshal
 
-script_name = 'mardis'
+_name = 'mardis'
 version = "3.0"
 mardis_error_decompile = "#mardis execution encountered an error!!!"
 
@@ -63,8 +64,13 @@ def view(xxx):
 		print("file %s not found!" % xxx)
 		exit()
 
-def dis(filename, outfile):
+def dis(filename, outfile, bysource=None, about=False):
+	if about:
+		print "# %s tools v%s" % (_name, version)
+		print "# Detail https://github.com/kapten-kaizo/mardis\n"
 	source_code = view(filename)
+	if bysource:
+		source_code = bysource
 	layer = 0
 	while True:
 		if source_code.count("exec") != 0:
@@ -81,13 +87,14 @@ def dis(filename, outfile):
 			suck = []
 			err = 0
 			if amount > 1:
-				print('mardis layer%d:\n- get %s target to decompile. trying ...' % (layer, amount))
+				print('layer%d:\n- get %s target to decompile' % (layer, amount))
 			else:
 				xxx = codelist[0]
-				if isco(xxx):
-					print('mardis layer%d: try target %s' % (layer, str(codelist[0])))
-				else:
-					print('mardis layer%d: target is not a code type' % layer)
+				print("-> decompiling %d" % layer)
+				#if isco(xxx):
+				#	print('mardis layer%d: try target %s' % (layer, str(codelist[0])))
+				#else:
+				#	print('mardis layer%d: target is not a code type' % layer)
 			for code_obj in codelist:
 				execute = try_decompile(code_obj)
 				if execute == mardis_error_decompile:
@@ -123,14 +130,14 @@ def dis(filename, outfile):
 def main():
 	outfile = "mardis_result.py"
 	if len(sys.argv) < 2:
-		print("Usage: %s [filename|output]" % script_name)
+		print("Usage: %s [filename|output]" % _name)
 		print("\nfilename = the file you want to decompile ")
 		print("output = For files that store decompilation results, the default is `%s`" % outfile)
 		exit()
 	else:
 		if len(sys.argv) >= 3:
 			outfile = sys.argv[2]
-		dis(sys.argv[1], outfile)
+		dis(sys.argv[1], outfile, about=True)
 
 if __name__ == "__main__":
 	main()

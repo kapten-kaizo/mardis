@@ -23,4 +23,4 @@ Usage: mardis [filename|output]
 filename = the file you want to decompile
 output = For files that store decompilation results, the default is `mardis_result.py`
 ````
-go [here](https://youtube.com) for tutorials on YouTube
+go [here](https://youtu.be/dLtvt1Iq-rQ?si=iKJKnaxRuNV9evVQ) for tutorials on YouTube
